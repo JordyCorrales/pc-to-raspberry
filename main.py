@@ -1,15 +1,20 @@
 import RPi.GPIO as GPIO
 import time
 
+
 pin = int(4)
+i = int(0)
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 GPIO.setup(pin, GPIO.OUT)
-for x in range(0, 5):
-  print("on {}".format(x))
+
+while i > 5:
+  print("on")
   GPIO.output(pin, GPIO.HIGH)
   time.sleep(1)
-  print("off {}".format(x))
+  print("off")
   GPIO.output(pin, GPIO.LOW)
+  i += 1
+
 GPIO.cleanup()
