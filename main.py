@@ -3,18 +3,17 @@ import time
 
 
 pin = int(4)
-i = int(0)
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 GPIO.setup(pin, GPIO.OUT)
 
-while i > 5:
-  print("on")
+for x in range(0, 5):
+  print("on {}".format(x))
   GPIO.output(pin, GPIO.HIGH)
   time.sleep(1)
-  print("off")
+  print("off {}".format(x))
   GPIO.output(pin, GPIO.LOW)
-  i += 1
+  time.sleep(1)
 
 GPIO.cleanup()
